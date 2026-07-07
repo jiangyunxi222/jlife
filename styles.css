@@ -456,22 +456,11 @@ nav a:hover {
   isolation: isolate;
 }
 
-.hero-bg,
 .hero-shade,
 .hero-grid {
   position: absolute;
   inset: 0;
   z-index: -3;
-}
-
-.hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.12;
-  filter: saturate(0.55) brightness(1.35);
-  transform: scale(1.02);
-  will-change: transform;
 }
 
 .hero-shade {
@@ -1300,10 +1289,6 @@ html[lang="zh-CN"] .work-row strong {
     min-height: auto;
     padding-top: 112px;
     padding-bottom: 330px;
-  }
-
-  .hero-bg {
-    object-position: 62% center;
   }
 
   .hero-shade {

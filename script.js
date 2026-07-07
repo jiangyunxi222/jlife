@@ -1,4 +1,3 @@
-const heroImage = document.querySelector(".hero-bg");
 const loader = document.querySelector(".loader");
 const localTime = document.querySelector("#local-time");
 const menuTime = document.querySelector("#menu-time");
@@ -312,11 +311,6 @@ function animateFrame() {
     smoothContent.style.transform = `translate3d(0, ${-scroll.current}px, 0)`;
   } else {
     scroll.current = scroll.target;
-  }
-
-  if (heroImage && !reduceMotion) {
-    const offset = scroll.current * 0.045;
-    heroImage.style.transform = `scale(1.045) translate3d(0, ${offset}px, 0)`;
   }
 
   menuLinkMotion.forEach((item) => {
