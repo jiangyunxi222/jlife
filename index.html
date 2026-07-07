@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portal | Creative Technologist</title>
+    <meta
+      name="description"
+      content="A personal portal for projects, experiments, notes, tools, and contact links."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="loader" role="dialog" aria-modal="true" aria-label="Choose language">
+      <div class="loader-panel">
+        <p class="loader-kicker">Choose your language</p>
+        <div class="loader-words" aria-hidden="true">
+          <span>Hello</span>
+          <span>你好</span>
+          <span>こんにちは</span>
+          <span>안녕하세요</span>
+          <span>Bonjour</span>
+          <span>Hola</span>
+        </div>
+        <div class="language-choices" aria-label="Language choices">
+          <button type="button" data-lang-choice="zh">中文</button>
+          <button type="button" data-lang-choice="en">English</button>
+          <button type="button" data-lang-choice="ja">日本語</button>
+          <button type="button" data-lang-choice="ko">한국어</button>
+          <button type="button" data-lang-choice="fr">Français</button>
+          <button type="button" data-lang-choice="es">Español</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="brand-cluster">
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand-mark">J</span>
+          <span>JLife</span>
+        </a>
+      </div>
+      <nav aria-label="Main navigation">
+        <a class="magnetic" href="#top" data-i18n="menu.home">Home</a>
+        <a class="magnetic" href="#work" data-i18n="nav.work">作品</a>
+        <a class="magnetic" href="#stack" data-i18n="nav.stack">能力</a>
+        <a class="magnetic" href="#contact" data-i18n="nav.contact">联系</a>
+      </nav>
+      <div class="site-actions">
+        <div class="language-switcher" aria-label="Language switcher">
+          <button
+            class="language-button magnetic"
+            type="button"
+            aria-expanded="false"
+            aria-controls="language-menu"
+            data-lang-menu-button
+          >
+            <span data-lang-current>English</span>
+          </button>
+          <div class="language-menu" id="language-menu" aria-hidden="true" data-lang-menu>
+            <button type="button" data-lang-option="zh">中文</button>
+            <button type="button" data-lang-option="en">English</button>
+            <button type="button" data-lang-option="ja">日本語</button>
+            <button type="button" data-lang-option="ko">한국어</button>
+            <button type="button" data-lang-option="fr">Français</button>
+            <button type="button" data-lang-option="es">Español</button>
+          </div>
+        </div>
+        <button class="menu-button magnetic" type="button" aria-expanded="false" aria-controls="site-menu" data-i18n="nav.menu">
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <div class="menu-overlay" id="site-menu" aria-hidden="true">
+      <div class="menu-panel">
+        <a href="#top" data-i18n="menu.home">Home</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="menu-meta">
+        <span data-i18n="menu.localTime">Local time</span>
+        <strong id="menu-time">同步中</strong>
+      </div>
+    </div>
+
+    <main id="top" class="smooth-content">
+      <section class="hero" aria-label="个人门户首页">
+        <img class="hero-bg" src="assets/hero-portal.png" alt="" />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="sticker-scene" aria-hidden="true">
+          <img class="sticker sticker-cat interactive-sticker" src="assets/stickers/cat-face.png" alt="" />
+          <img class="sticker sticker-paw interactive-sticker" src="assets/stickers/paw-prints.png" alt="" />
+          <img class="sticker sticker-flower interactive-sticker" src="assets/stickers/cherry-blossom.png" alt="" />
+          <img class="sticker sticker-cloud interactive-sticker" src="assets/stickers/cloud.png" alt="" />
+          <img class="sticker sticker-sparkles interactive-sticker" src="assets/stickers/sparkles.png" alt="" />
+          <img class="sticker sticker-plant interactive-sticker" src="assets/stickers/potted-plant.png" alt="" />
+          <img class="sticker sticker-butterfly interactive-sticker" src="assets/stickers/butterfly.png" alt="" />
+          <img class="sticker sticker-rainbow interactive-sticker" src="assets/stickers/rainbow.png" alt="" />
+          <img class="sticker sticker-sun interactive-sticker" src="assets/stickers/sun.png" alt="" />
+          <img class="sticker sticker-strawberry interactive-sticker" src="assets/stickers/strawberry.png" alt="" />
+          <img class="sticker sticker-mushroom interactive-sticker" src="assets/stickers/mushroom.png" alt="" />
+          <img class="sticker sticker-seedling interactive-sticker" src="assets/stickers/seedling.png" alt="" />
+          <img class="sticker sticker-tulip interactive-sticker" src="assets/stickers/tulip.png" alt="" />
+          <img class="sticker sticker-clover interactive-sticker" src="assets/stickers/four-leaf-clover.png" alt="" />
+          <img class="sticker sticker-ribbon interactive-sticker" src="assets/stickers/ribbon.png" alt="" />
+        </div>
+
+        <div class="hero-content">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Neko-powered personal garden</p>
+          <h1 data-i18n="hero.title">把想法养成可爱的小宇宙。</h1>
+          <p class="hero-copy" data-i18n="hero.copy">
+            这里是我的个人入口：项目、实验、笔记、工具和联系方式都从这里开始。
+            Neko 会在页面里追着鼠标跑，像一只住在作品集里的小猫。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary magnetic" href="#work" data-i18n="hero.viewWork">查看作品</a>
+            <a class="button ghost magnetic" href="#contact" data-i18n="hero.contactMe">联系我</a>
+          </div>
+        </div>
+
+        <aside class="status-panel" aria-label="Current status">
+          <div class="status-time">
+            <span class="status-dot"></span>
+            <span id="local-time">Syncing</span>
+            <img src="assets/stickers/paw-prints.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="status-note">
+            <strong data-i18n="status.title">Open to ideas</strong>
+            <p data-i18n="status.copy">正在探索 AI、交互设计、自动化工具，以及更轻盈可爱的个人工作流。</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section intro" aria-label="简介">
+        <img class="section-sticker intro-sticker interactive-sticker" src="assets/stickers/crayon.png" alt="" aria-hidden="true" />
+        <div>
+          <p class="section-kicker">Portal</p>
+          <h2 data-i18n="intro.title">一个集中展示身份、作品和链接的个人主控台。</h2>
+        </div>
+        <p data-i18n="intro.copy">
+          你可以把这里改造成作品集、博客入口、简历首页，或者给朋友看的数字名片。
+          当前版本把 Neko.js、贴纸资产和柔和配色组合起来，做成一个轻快、可亲近的个人小站。
+        </p>
+      </section>
+
+      <section id="work" class="section work-section">
+        <img class="section-sticker work-sticker interactive-sticker" src="assets/stickers/ribbon.png" alt="" aria-hidden="true" />
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="work.kicker">Selected Work</p>
+          <h2 data-i18n="work.title">最近在做</h2>
+        </div>
+        <div class="work-list">
+          <a class="work-row" href="#stack" data-preview="assets/stickers/artist-palette.png">
+            <span>01</span>
+            <strong data-i18n="work.item1.title">AI 工作流中枢</strong>
+            <em>Automation / Tools</em>
+            <img src="assets/stickers/artist-palette.png" alt="" />
+          </a>
+          <a class="work-row" href="#stack" data-preview="assets/stickers/teddy-bear.png">
+            <span>02</span>
+            <strong data-i18n="work.item2.title">交互实验室</strong>
+            <em>Motion / Interface</em>
+            <img src="assets/stickers/teddy-bear.png" alt="" />
+          </a>
+          <a class="work-row" href="#stack" data-preview="assets/stickers/shortcake.png">
+            <span>03</span>
+            <strong data-i18n="work.item3.title">知识地图</strong>
+            <em>Writing / Systems</em>
+            <img src="assets/stickers/shortcake.png" alt="" />
+          </a>
+          <div class="work-preview" aria-hidden="true">
+            <img src="assets/stickers/cat-face.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section id="stack" class="section stack-section">
+        <img class="section-sticker stack-sticker interactive-sticker" src="assets/stickers/rainbow.png" alt="" aria-hidden="true" />
+        <div class="section-head">
+          <p class="section-kicker">Stack</p>
+          <h2 data-i18n="stack.title">能力拼图</h2>
+        </div>
+        <div class="stack-list" aria-label="技能列表">
+          <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/cloud.png" alt="" />Frontend</span>
+          <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/artist-palette.png" alt="" />AI Tools</span>
+          <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/seedling.png" alt="" />Automation</span>
+          <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/strawberry.png" alt="" />Product Thinking</span>
+          <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/four-leaf-clover.png" alt="" />Data Viz</span>
+          <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/crayon.png" alt="" />Writing</span>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <img class="section-sticker contact-sticker interactive-sticker" src="assets/stickers/love-letter.png" alt="" aria-hidden="true" />
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2 data-i18n="contact.title">有好玩的想法，就从这里发射。</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="magnetic" href="mailto:hello@example.com">hello@example.com</a>
+          <a class="magnetic" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="magnetic" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+        <img class="contact-drink interactive-sticker" src="assets/stickers/bubble-tea.png" alt="" aria-hidden="true" />
+        <p class="asset-credit">
+          <span data-i18n="credit">Sticker assets from OpenMoji, licensed under CC BY-SA 4.0. Neko powered by local Neko.js.</span>
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="assets/neko.js" data-autostart></script>
+  </body>
+</html>
