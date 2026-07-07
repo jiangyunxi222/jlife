@@ -729,6 +729,94 @@ html[lang="zh-CN"] .hero-copy {
   margin-top: 34px;
 }
 
+.portal-dock {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: min(820px, 100%);
+  margin-top: 34px;
+}
+
+.portal-card {
+  position: relative;
+  display: grid;
+  min-height: 132px;
+  align-content: end;
+  gap: 5px;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgba(96, 75, 64, 0.13);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 16px 40px rgba(132, 96, 75, 0.1);
+  backdrop-filter: blur(18px);
+  transition: border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.portal-card::before {
+  position: absolute;
+  inset: auto 0 0;
+  height: 46%;
+  content: "";
+  background: linear-gradient(0deg, rgba(255, 240, 197, 0.78), transparent);
+  opacity: 0;
+  transform: translateY(18%);
+  transition: opacity 280ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portal-card:hover {
+  border-color: rgba(217, 95, 125, 0.26);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 58px rgba(132, 96, 75, 0.16);
+}
+
+.portal-card:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portal-card img {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 12px rgba(126, 91, 76, 0.12));
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.portal-card:hover img {
+  transform: rotate(8deg) scale(1.12);
+}
+
+.portal-card span,
+.portal-card strong,
+.portal-card small {
+  position: relative;
+  z-index: 1;
+}
+
+.portal-card span {
+  color: #d95f7d;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.portal-card strong {
+  color: var(--text);
+  font-size: 21px;
+  line-height: 1.05;
+}
+
+.portal-card small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .button,
 .contact-actions a {
   display: inline-flex;
@@ -928,7 +1016,7 @@ html[lang="zh-CN"] .hero-copy {
   align-items: start;
 }
 
-.intro > p,
+.intro-card,
 .contact-section p {
   color: var(--muted);
   line-height: 1.75;
@@ -938,13 +1026,16 @@ html[lang="zh-CN"] .hero-copy {
 html[lang="ja"] .intro > p,
 html[lang="ko"] .intro > p,
 html[lang="zh-CN"] .intro > p,
+html[lang="ja"] .intro-card,
+html[lang="ko"] .intro-card,
+html[lang="zh-CN"] .intro-card,
 html[lang="ja"] .contact-section p,
 html[lang="ko"] .contact-section p,
 html[lang="zh-CN"] .contact-section p {
   line-height: 1.9;
 }
 
-.intro > p {
+.intro-card {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 26px;
@@ -953,9 +1044,32 @@ html[lang="zh-CN"] .contact-section p {
   transition: transform 280ms ease, box-shadow 280ms ease;
 }
 
-.intro > p:hover {
+.intro-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 28px 74px rgba(132, 96, 75, 0.2);
+}
+
+.intro-card p {
+  margin-bottom: 18px;
+}
+
+.intro-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.intro-tags span {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(217, 95, 125, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 240, 197, 0.58);
+  color: #6e5a4d;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .section-head {
@@ -1026,12 +1140,30 @@ html[lang="zh-CN"] .contact-section p {
   transition: color 220ms ease, transform 360ms ease;
 }
 
+.work-main {
+  min-width: 0;
+}
+
 .work-row strong {
   display: block;
   min-width: 0;
   overflow: hidden;
   font-size: clamp(34px, 5.8vw, 76px);
   line-height: 0.95;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 220ms ease, transform 360ms ease;
+}
+
+.work-main small {
+  display: block;
+  max-width: 680px;
+  margin-top: 9px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
   text-overflow: ellipsis;
   white-space: nowrap;
   transition: color 220ms ease, transform 360ms ease;
@@ -1062,9 +1194,11 @@ html[lang="zh-CN"] .work-row strong {
 .work-row:hover span,
 .work-row:hover em,
 .work-row:hover strong,
+.work-row:hover .work-main small,
 .work-row.is-active span,
 .work-row.is-active em,
-.work-row.is-active strong {
+.work-row.is-active strong,
+.work-row.is-active .work-main small {
   color: #3a2d25;
   transform: translateX(18px);
 }
@@ -1182,6 +1316,51 @@ html[lang="zh-CN"] .work-row strong {
   transform: rotate(-8deg) scale(1.18);
 }
 
+.stack-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.stack-groups div,
+.contact-brief {
+  border: 1px solid rgba(96, 75, 64, 0.13);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 16px 40px rgba(132, 96, 75, 0.09);
+}
+
+.stack-groups div {
+  padding: 18px;
+}
+
+.stack-groups span,
+.contact-brief span {
+  display: block;
+  margin-bottom: 9px;
+  color: #d95f7d;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.stack-groups strong {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.12;
+}
+
+.stack-groups p,
+.contact-brief p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .contact-section {
   min-height: calc(100svh - 52px);
   align-content: center;
@@ -1198,6 +1377,13 @@ html[lang="zh-CN"] .work-row strong {
 .contact-actions {
   justify-content: flex-start;
   margin-top: 6px;
+}
+
+.contact-brief {
+  grid-column: 1 / -1;
+  width: min(620px, 100%);
+  margin-top: 20px;
+  padding: 18px 20px;
 }
 
 .contact-actions a {
@@ -1288,7 +1474,7 @@ html[lang="zh-CN"] .work-row strong {
   .hero {
     min-height: auto;
     padding-top: 112px;
-    padding-bottom: 330px;
+    padding-bottom: 360px;
   }
 
   .hero-shade {
@@ -1386,6 +1572,30 @@ html[lang="zh-CN"] .work-row strong {
     font-size: 22px;
   }
 
+  .portal-dock {
+    grid-template-columns: 1fr;
+    width: min(360px, 100%);
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .portal-card {
+    min-height: 104px;
+    padding: 15px 76px 15px 15px;
+  }
+
+  .portal-card img {
+    right: 16px;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translateY(-50%);
+  }
+
+  .portal-card:hover img {
+    transform: translateY(-50%) rotate(8deg) scale(1.12);
+  }
+
   .intro,
   .contact-section {
     grid-template-columns: 1fr;
@@ -1411,6 +1621,15 @@ html[lang="zh-CN"] .work-row strong {
 
   .stack-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stack-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-groups div,
+  .contact-brief {
+    padding: 16px;
   }
 
   .menu-overlay {
@@ -1439,6 +1658,10 @@ html[lang="zh-CN"] .work-row strong {
 
   .work-row strong {
     font-size: clamp(24px, 8vw, 36px);
+  }
+
+  .work-main small {
+    display: none;
   }
 
   html[lang="fr"] .work-row strong,

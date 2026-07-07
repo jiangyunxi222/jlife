@@ -124,6 +124,26 @@
             <a class="button primary magnetic" href="#work" data-i18n="hero.viewWork">查看作品</a>
             <a class="button ghost magnetic" href="#contact" data-i18n="hero.contactMe">联系我</a>
           </div>
+          <div class="portal-dock" aria-label="Portal shortcuts">
+            <a class="portal-card magnetic" href="#work">
+              <img src="assets/stickers/artist-palette.png" alt="" aria-hidden="true" />
+              <span data-i18n="portal.work.label">Work index</span>
+              <strong data-i18n="portal.work.title">项目入口</strong>
+              <small data-i18n="portal.work.copy">看近期作品、实验和系统化产出。</small>
+            </a>
+            <a class="portal-card magnetic" href="#stack">
+              <img src="assets/stickers/seedling.png" alt="" aria-hidden="true" />
+              <span data-i18n="portal.stack.label">Capability map</span>
+              <strong data-i18n="portal.stack.title">能力地图</strong>
+              <small data-i18n="portal.stack.copy">快速了解我能解决什么问题。</small>
+            </a>
+            <a class="portal-card magnetic" href="#contact">
+              <img src="assets/stickers/love-letter.png" alt="" aria-hidden="true" />
+              <span data-i18n="portal.contact.label">Contact channel</span>
+              <strong data-i18n="portal.contact.title">联系入口</strong>
+              <small data-i18n="portal.contact.copy">合作、交流、机会都从这里开始。</small>
+            </a>
+          </div>
         </div>
 
         <aside class="status-panel" aria-label="Current status">
@@ -145,10 +165,17 @@
           <p class="section-kicker">Portal</p>
           <h2 data-i18n="intro.title">一个集中展示身份、作品和链接的个人主控台。</h2>
         </div>
-        <p data-i18n="intro.copy">
-          你可以把这里改造成作品集、博客入口、简历首页，或者给朋友看的数字名片。
-          当前版本把 Neko.js、贴纸资产和柔和配色组合起来，做成一个轻快、可亲近的个人小站。
-        </p>
+        <div class="intro-card">
+          <p data-i18n="intro.copy">
+            你可以把这里改造成作品集、博客入口、简历首页，或者给朋友看的数字名片。
+            当前版本把 Neko.js、贴纸资产和柔和配色组合起来，做成一个轻快、可亲近的个人小站。
+          </p>
+          <div class="intro-tags" aria-label="Portal highlights">
+            <span data-i18n="intro.tag1">Creative tech</span>
+            <span data-i18n="intro.tag2">AI workflow</span>
+            <span data-i18n="intro.tag3">Interface systems</span>
+          </div>
+        </div>
       </section>
 
       <section id="work" class="section work-section">
@@ -160,19 +187,28 @@
         <div class="work-list">
           <a class="work-row" href="#stack" data-preview="assets/stickers/artist-palette.png">
             <span>01</span>
-            <strong data-i18n="work.item1.title">AI 工作流中枢</strong>
+            <div class="work-main">
+              <strong data-i18n="work.item1.title">AI 工作流中枢</strong>
+              <small data-i18n="work.item1.copy">把重复任务、内容生产和资料整理接进一个可复用流程。</small>
+            </div>
             <em>Automation / Tools</em>
             <img src="assets/stickers/artist-palette.png" alt="" />
           </a>
           <a class="work-row" href="#stack" data-preview="assets/stickers/teddy-bear.png">
             <span>02</span>
-            <strong data-i18n="work.item2.title">交互实验室</strong>
+            <div class="work-main">
+              <strong data-i18n="work.item2.title">交互实验室</strong>
+              <small data-i18n="work.item2.copy">探索滚动、指针、转场和微交互如何服务信息表达。</small>
+            </div>
             <em>Motion / Interface</em>
             <img src="assets/stickers/teddy-bear.png" alt="" />
           </a>
           <a class="work-row" href="#stack" data-preview="assets/stickers/shortcake.png">
             <span>03</span>
-            <strong data-i18n="work.item3.title">知识地图</strong>
+            <div class="work-main">
+              <strong data-i18n="work.item3.title">知识地图</strong>
+              <small data-i18n="work.item3.copy">把笔记、学习路径和项目经验整理成可追踪结构。</small>
+            </div>
             <em>Writing / Systems</em>
             <img src="assets/stickers/shortcake.png" alt="" />
           </a>
@@ -196,6 +232,23 @@
           <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/four-leaf-clover.png" alt="" />Data Viz</span>
           <span class="reveal-card"><img class="interactive-sticker" src="assets/stickers/crayon.png" alt="" />Writing</span>
         </div>
+        <div class="stack-groups" aria-label="Capability groups">
+          <div>
+            <span data-i18n="stack.group1.kicker">Build</span>
+            <strong data-i18n="stack.group1.title">从想法到可用界面</strong>
+            <p data-i18n="stack.group1.copy">把需求拆成页面、状态、组件和数据流，快速做出能体验的版本。</p>
+          </div>
+          <div>
+            <span data-i18n="stack.group2.kicker">Automate</span>
+            <strong data-i18n="stack.group2.title">把流程变成工具</strong>
+            <p data-i18n="stack.group2.copy">用 AI、脚本和前端界面减少重复操作，让工作流更轻。</p>
+          </div>
+          <div>
+            <span data-i18n="stack.group3.kicker">Explain</span>
+            <strong data-i18n="stack.group3.title">让复杂内容更清楚</strong>
+            <p data-i18n="stack.group3.copy">用结构化写作、可视化和交互，把抽象信息变得容易扫描。</p>
+          </div>
+        </div>
       </section>
 
       <section id="contact" class="section contact-section">
@@ -208,6 +261,10 @@
           <a class="magnetic" href="mailto:hello@example.com">hello@example.com</a>
           <a class="magnetic" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
           <a class="magnetic" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+        <div class="contact-brief">
+          <span data-i18n="contact.brief.kicker">Good fit</span>
+          <p data-i18n="contact.brief.copy">适合聊产品原型、作品集网站、AI 工具、交互动效和个人知识系统。</p>
         </div>
         <img class="contact-drink interactive-sticker" src="assets/stickers/bubble-tea.png" alt="" aria-hidden="true" />
         <p class="asset-credit">
